@@ -3,7 +3,6 @@ package Java_Lab9.Task1;
 public class Bank {
 
     public void transfer(Account from, Account to, int amount) {
-
         if (from.getId() == to.getId()) {
             return;
         }
@@ -13,7 +12,6 @@ public class Bank {
 
         synchronized (lock1) {
             synchronized (lock2) {
-
                 if (from.getBalance() >= amount) {
                     from.withdraw(amount);
                     to.deposit(amount);

@@ -10,7 +10,6 @@ public class Main {
     private static final int MAX_TRANSFER_AMOUNT = 100;
 
     public static void main(String[] args) {
-
         Bank bank = new Bank();
         Account[] accounts = new Account[NUM_ACCOUNTS];
         Random rand = new Random();
@@ -52,6 +51,7 @@ public class Main {
         }
 
         System.out.println("...Всі потоки завершили роботу.");
+
         long sumAfter = bank.getTotalBalance(accounts);
         System.out.println("Загальний баланс ПІСЛЯ переказів: " + sumAfter);
 

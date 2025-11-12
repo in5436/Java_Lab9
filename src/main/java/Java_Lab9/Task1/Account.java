@@ -19,17 +19,14 @@ public class Account {
     }
 
     public void deposit(int amount) {
-
         balance += amount;
     }
 
     public synchronized int getBalance() {
-
         return balance;
     }
 
     public long getId() {
-
         return id;
     }
 
