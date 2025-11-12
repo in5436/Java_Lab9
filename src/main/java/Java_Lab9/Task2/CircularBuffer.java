@@ -23,30 +23,24 @@ public class CircularBuffer {
     }
 
     public synchronized void put(String message) throws InterruptedException {
-
         while (isFull()) {
             wait();
         }
 
         buffer[tail] = message;
-
         tail = (tail + 1) % capacity;
-
         currentSize++;
 
         notifyAll();
     }
 
     public synchronized String get() throws InterruptedException {
-
         while (isEmpty()) {
             wait();
         }
 
         String message = buffer[head];
-
         head = (head + 1) % capacity;
-
         currentSize--;
 
         notifyAll();

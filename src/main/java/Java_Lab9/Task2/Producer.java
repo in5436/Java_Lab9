@@ -19,7 +19,6 @@ public class Producer implements Runnable {
             int messageCount = 0;
             while (true) {
                 String message = "Потік №" + id + " згенерував повідомлення " + (++messageCount);
-
                 buffer.put(message);
 
                 Thread.sleep(rand.nextInt(100));

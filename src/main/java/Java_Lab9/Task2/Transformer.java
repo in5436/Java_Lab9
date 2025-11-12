@@ -20,11 +20,9 @@ public class Transformer implements Runnable {
         try {
             while (true) {
                 String originalMessage = bufferFrom.get();
-
                 String messageContent = originalMessage.split("повідомлення ")[1];
 
                 String newMessage = "Потік №" + id + " переклав повідомлення " + messageContent;
-
                 bufferTo.put(newMessage);
 
                 Thread.sleep(rand.nextInt(100));
